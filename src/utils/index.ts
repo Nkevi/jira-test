@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 export const isFalsy = (value: unknown) => (value === 0 ? false : !value);
+
 export const cleanObject = (object: object) => {
   // 防止破坏入参的数据
   const result = { ...object };
