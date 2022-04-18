@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import logo from "assets/logo.svg";
 import left from "assets/left.svg";
 import right from "assets/right.svg";
+import { LinkButton } from "components/lib";
 
 export const UnauthenticatedApp = () => {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -62,14 +63,4 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-`;
-
-const LinkButton = styled.button`
-  background-color: transparent;
-  color: rgb(35, 114, 217);
-  border: none;
-  cursor: pointer;
-  display: inline;
-  margin: 0;
-  padding: 0;
 `;

@@ -4043,7 +4043,7 @@
   "resolved" "https://registry.npmmirror.com/date-fns/-/date-fns-2.28.0.tgz"
   "version" "2.28.0"
 
-"dayjs@1.x":
+"dayjs@^1.11.1", "dayjs@1.x":
   "integrity" "sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA=="
   "resolved" "https://registry.npmmirror.com/dayjs/-/dayjs-1.11.1.tgz"
   "version" "1.11.1"
