@@ -18,6 +18,7 @@ interface ListProps extends TableProps<Project> {
 export const List = ({ users, ...props }: ListProps) => {
   return (
     <Table
+      rowKey="id"
       pagination={false}
       columns={[
         {

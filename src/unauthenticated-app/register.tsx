@@ -3,11 +3,26 @@ import React from "react";
 import { Form, Input } from "antd";
 import { LongButton } from "unauthenticated-app";
 
-export const RegisterScreen = () => {
+export const RegisterScreen = ({
+  onError,
+}: {
+  onError: (error: Error) => void;
+}) => {
   const { register } = useAuth();
 
-  const handleSubmit = (values: { username: string; password: string }) => {
-    register(values);
+  const handleSubmit = ({
+    cpassword,
+    ...values
+  }: {
+    username: string;
+    password: string;
+    cpassword: string;
+  }) => {
+    if (cpassword !== values.password) {
+      onError(new Error("请确认两次输入的密码是否相同"));
+      return;
+    }
+    register(values).catch(onError);
   };
 
   return (
@@ -23,6 +38,12 @@ export const RegisterScreen = () => {
         rules={[{ required: true, message: "请输入密码" }]}
       >
         <Input placeholder="密码" type="password" id="password" />
+      </Form.Item>
+      <Form.Item
+        name={"cpassword"}
+        rules={[{ required: true, message: "请确认密码" }]}
+      >
+        <Input placeholder="确认密码" type="password" id="cpassword" />
       </Form.Item>
       <LongButton htmlType={"submit"} type={"primary"}>
         注册
