@@ -6,7 +6,6 @@ import styled from "@emotion/styled";
 import logo from "assets/logo.svg";
 import left from "assets/left.svg";
 import right from "assets/right.svg";
-import { LinkButton } from "components/lib";
 
 export const UnauthenticatedApp = () => {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -17,9 +16,9 @@ export const UnauthenticatedApp = () => {
       <ShadowCard>
         {isRegistered ? <RegisterScreen /> : <LoginScreen />}
         <Divider />
-        <LinkButton onClick={() => setIsRegistered(!isRegistered)}>
+        <Button type="link" onClick={() => setIsRegistered(!isRegistered)}>
           {isRegistered ? "已经有账号了？直接登录" : "没有账号？注册新账号"}
-        </LinkButton>
+        </Button>
       </ShadowCard>
     </Container>
   );

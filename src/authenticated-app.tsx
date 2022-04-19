@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { Menu, Dropdown } from "antd";
-import { LinkButton, Row } from "components/lib";
+import { Button, Menu, Dropdown } from "antd";
+import { Row } from "components/lib";
 import { useAuth } from "context/auth-context";
 import React from "react";
 import { ProjectListScreen } from "screen/project-list";
@@ -21,14 +21,16 @@ export const AuthenticatedApp = () => {
             overlay={
               <Menu>
                 <Menu.Item key={"logout"}>
-                  <LinkButton onClick={logout}>登出</LinkButton>
+                  <Button type="link" onClick={logout}>
+                    登出
+                  </Button>
                 </Menu.Item>
               </Menu>
             }
           >
-            <LinkButton onClick={(e) => e.preventDefault()}>
+            <Button type="link" onClick={(e) => e.preventDefault()}>
               Hi, {user?.name}
-            </LinkButton>
+            </Button>
           </Dropdown>
         </HeaderRight>
       </Header>

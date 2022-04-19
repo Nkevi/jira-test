@@ -21,13 +21,3 @@ export const Row = styled.div<{
         : undefined};
   }
 `;
-
-export const LinkButton = styled.button`
-  background-color: transparent;
-  color: rgb(35, 114, 217);
-  border: none;
-  cursor: pointer;
-  display: inline;
-  margin: 0;
-  padding: 0;
-`;
